@@ -1,0 +1,22 @@
+<template>
+	<div class="app slds-p-around_medium">
+		<div style="border: 1px solid #dddbda;border-radius:0.25rem;background-color:white;">
+			<lightning-layout vertical-align="center">
+				<lightning-layout-item>
+					<div>
+						<template for:each={inputValueList} for:item="item">
+							<span key={item.id}>
+								<lightning-pill data-id={item.val} label={item.val} onremove={handleRemove}></lightning-pill>
+							</span>
+						</template>
+					</div>
+				</lightning-layout-item>
+				<lightning-layout-item>
+					<div onkeyup={handleKeyUp}>
+						<input class="input-box" type="text" value={inputValue} ></input>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</div>
+	</div>
+</template>
